@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/resources\/ReviewFeature\/Review[1:3]","start":1658453636988,"end":1658453637152,"title":"src\/test\/resources\/ReviewFeature\/Review[1:3] 21:33:56.988-21:33:57.152 create new account","className":"failed"},{"id":2,"group":1,"content":"src\/test\/resources\/ReviewFeature\/Review[2:13]","start":1658453637159,"end":1658453637159,"title":"src\/test\/resources\/ReviewFeature\/Review[2:13] 21:33:57.159-21:33:57.159 Create an account add car","className":"failed"},{"id":3,"group":1,"content":"src\/test\/resources\/ReviewFeature\/Review[3:23]","start":1658453637168,"end":1658453637169,"title":"src\/test\/resources\/ReviewFeature\/Review[3:23] 21:33:57.168-21:33:57.169 Add phone number to existing account","className":"failed"},{"id":4,"group":1,"content":"src\/test\/resources\/ReviewFeature\/Review[4:34]","start":1658453637174,"end":1658453637176,"title":"src\/test\/resources\/ReviewFeature\/Review[4:34] 21:33:57.174-21:33:57.176 Add adress to existing  account","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
